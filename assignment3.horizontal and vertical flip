@@ -1,0 +1,25 @@
+% Read the image from MATLAB Drive
+img = imread('/MATLAB Drive/example.png'); 
+
+% Display the original image
+figure;
+imshow(img);
+title('Original Image');
+
+% Vertical Flip
+vertically_flipped = flipud(img); % Flip image along the vertical axis
+figure;
+imshow(vertically_flipped);
+title('Vertically Flipped Image');
+
+% Horizontal Flip
+horizontally_flipped = fliplr(img); % Flip image along the horizontal axis
+figure;
+imshow(horizontally_flipped);
+title('Horizontally Flipped Image');
+
+% Both Vertical and Horizontal Flip
+both_flipped = flipud(fliplr(img)); % Combine vertical and horizontal flip
+figure;
+imshow(both_flipped);
+title('Both Vertical and Horizontal Flipped Image');
