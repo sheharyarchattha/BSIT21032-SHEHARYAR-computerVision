@@ -1,0 +1,29 @@
+ % Load or use the input image stored in variable A
+A = imread('wow.png'); % Replace with your image file name or path
+
+% Display the input image
+figure('Name', 'Original Image');
+imshow(A);
+title('Original Image');
+
+% Step 1: Identify image type
+if islogical(A)
+img_type = 'Binary';
+elseif ndims(A) == 3
+img_type = 'RGB';
+else
+img_type = 'Grayscale';
+end
+
+% Display the image type
+disp(['Image type: ', img_type]);
+
+
+% Convert RGB to grayscale for further processing
+if strcmp(img_type, 'RGB')
+img_gray = rgb2gray(A);
+elseif strcmp(img_type, 'Grayscale')
+img_gray = A;
+else
+img_gray = double(A) * 255; % Convert binary to grayscale
+End
